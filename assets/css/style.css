@@ -1,0 +1,51 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.swim-lanes {
+  min-height: 60vh;
+}
+
+.task-card {
+  margin: 0 auto;
+}
+
+.task-card:hover {
+  cursor: grab;
+}
+
+.modal-form {
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.task-title {
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin-bottom: 1em;
+}
+
+.task-due {
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin-bottom: 1em;
+}
+
+.description {
+
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  width: 100%;
+}
+
+#todo-cards div {
+
+  border: 3px solid black;
+}
