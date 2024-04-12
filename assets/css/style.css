@@ -8,7 +8,10 @@ body {
 }
 
 .task-card {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
+  color: red;
 }
 
 .task-card:hover {
@@ -49,3 +52,5 @@ body {
 
   border: 3px solid black;
 }
+
+
