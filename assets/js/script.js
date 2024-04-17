@@ -1,20 +1,20 @@
-let task_form = document.getElementById("task_form")
-let btn_modal_close = document.getElementById("btn_modal_close")
+const task_form = document.getElementById("task_form")
+const btn_modal_close = document.getElementById("btn_modal_close")
 // containers
-let todo_cards_container  = document.getElementById("todo-cards")
-let progress_cards_container  = document.getElementById("in-progress-cards")
-let done_cards_container  = document.getElementById("done-cards")
+const todo_cards_container  = document.getElementById("todo-cards")
+const progress_cards_container  = document.getElementById("in-progress-cards")
+const done_cards_container  = document.getElementById("done-cards")
 
 
 // add new task
 task_form.addEventListener("submit",(event)=>{
     event.preventDefault()
-    let form = event.target
+    const form = event.target
 
-    let title = form.title.value
-    let task_due_date = form.task_due_date.value
-    let desc = form.desc.value
-    let task_id = generateUniqueId()
+    const title = form.title.value
+    const task_due_date = form.task_due_date.value
+    const desc = form.desc.value
+    const task_id = generateUniqueId()
     
     if(title && task_due_date && desc){
         
@@ -41,7 +41,7 @@ task_form.addEventListener("submit",(event)=>{
 
     btn_modal_close.click()
 
-    // reset the form inputs
+    // reset form inputs
     form.title.value = ""
     form.desc.value = ""
     form.task_due_date.value = null
@@ -89,12 +89,12 @@ task_containers.forEach((container) => {
   }
 
   function dragDrop(e) {
-    let target_div = e.target.querySelector(".cards")
+    const target_div = e.target.querySelector(".cards")
     this.classList.remove("hovered");
     let draggedTask = document.querySelector(".dragging");
     
-    let new_progress = get_progress(target_div.getAttribute("id"));
-    let id = draggedTask.getAttribute("task_id")
+    const new_progress = get_progress(target_div.getAttribute("id"));
+    const id = draggedTask.getAttribute("task_id")
 
     // log(id and new_progress);
     update_storage(id, new_progress)
@@ -124,13 +124,13 @@ function addDraggableListeners(task) {
 
 function add_task_to_storage(task){
 
-  let prev_tasks = get_tasks_from_storage()
-  let tasks = [...prev_tasks, task]
+  const prev_tasks = get_tasks_from_storage()
+  const tasks = [...prev_tasks, task]
   localStorage.setItem("tasks", JSON.stringify(tasks))
 }
 
 function get_tasks_from_storage(){
-    let tasks = JSON.parse(localStorage.getItem("tasks")) || []
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || []
     return tasks
 }
 
